@@ -27,7 +27,7 @@ export async function uploadToS3(file: Buffer, fileName: string, contentType: st
   
 
   return `https://${BUCKET_NAME}.s3.${process.env.ENVAWS_REGION || 'us-east-1'}.amazonaws.com/${key}`;
-
+}
 
 export async function deleteFromS3(fileUrl: string): Promise<void> {
   const key = fileUrl.split('/').pop();
